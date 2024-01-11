@@ -1,46 +1,135 @@
-/* -----------------RESET RULE----------------- */
-
-
-
+:root{
+    --grey_color:  rgb(235, 235, 235);
+    --icon_color: rgb(108, 114, 117);
+}
+.color_gray{
+    color: var(--icon_color);
+}
 /* -----------------GENERAL RULE----------------- */
-
+html{
+    font-family: Arial, Helvetica, sans-serifs;
+}
 
 /* -----------------HEADER RULE----------------- */
-
+header{
+    height: 70px;
+    background-color: rgb(0, 150, 135);
+}
 
 /* -----------------MAIN RULE------------------- */
-
-
-/* -----------------FOOTER RULE----------------- */
-
-
-
-
-/* -----------------MEDIA QUERY----------------- */
-/* IN MOBILE FIRST */
-
-@media screen and (max-width: 576px) {
-
-}
-@media screen and (max-width: 768px) {
-
-}
-@media screen and (max-width: 992px) {
-
+main{
+    background-color: rgb(218, 219, 213);
+    height: calc(100vh - 70px);
 }
 
-/* IN DEKSTOP FIRST */
-@media screen and (min-width: 992px) {
+.my_container{
+    width: 1100px;
+    height: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: white;
+}
+
+/* HEADER MAIN  */
+.header_left,
+.header_right
+{
+    background-color: var(--grey_color);
+    height: 60px;
+    display: flex;
+    padding: 7px;
+    justify-content: space-between;
+}
+
+.header_icon{
+    display: flex;
+    align-items: center;
+    color: var(--icon_color);
+}
+.header_icon >*{
+   padding-right: 12px;
+}
+.user_container{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    width: 47px;
+    border-radius: 50%;
+}
+.name_user{
+    font-size: 0.9em;
+}
+
+
+/* MAIN */
+.main_chat{
+    display: flex;
+    height: 100%;
+}
+
+/* LEFT MAIN */
+.left_container{
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid rgb(208, 202, 202);
+}
+
+
+/* RIGHT MAIN */
+.right_container{
+    width: 70%;
+    height: 100%;
+}
+
+.container_chat{
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 60px);
+}
+.chat{
+    height: calc(100% - 40px);
+}
+
+.input_text_container{
+    display: flex;
+    height: 40px;
+    background-color:  var(--grey_color);;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 7px;
+}
+.input_text_container > *{
+    display: flex;
+    margin-right: 5px;
 
 }
-@media screen and (min-width: 768px) {
-
+.input_text_container >:first-child,
+.input_text_container >:last-child{
+    width: 10%;
 }
-@media screen and (min-width: 576px) {
-
+.input_text_container >:nth-child(2){
+    width: 80%;
+}
+.input_text_container >:nth-child(2) input{
+    width: 100%;
+    border: none;
 }
 
-/* -----------------DEBUG----------------- */
-.debug .container {
-    border: 1px dashed red;
+.mic_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon_color);
+}
+.emoji_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon_color);
+
 }

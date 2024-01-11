@@ -5,6 +5,7 @@
 .color_gray{
     color: var(--icon_color);
 }
+
 /* -----------------GENERAL RULE----------------- */
 html{
     font-family: Arial, Helvetica, sans-serifs;
@@ -80,7 +81,48 @@ img{
     border-right: 1px solid rgb(208, 202, 202);
 }
 
+.notifiche_container{
+    background-color: rgb(141, 217, 252);
+    height: 45px;
+    display: flex;
+}
+.ring_container{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.ring_container>*{
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    font-size: 1em;
+    color: rgb(141, 217, 252);
+}
+.turn_on_notifications{
+    color: var(--icon_color);
+    font-size: 0.9em;
+    text-decoration: underline;
+}
+.notifiche_text_container{
+    font-size: 0.8em;
+    padding-top: 4px;
+}
 
+.search_container{
+    padding: 5px;
+    background-color: var(--grey_color);
+}
+.search_container input{
+   height: 24px;
+}
+
+.container_user_chat> *{
+    border-bottom: 1px solid lightgray;
+    padding: 3px;
+}
 /* RIGHT MAIN */
 .right_container{
     width: 70%;
@@ -93,6 +135,7 @@ img{
 }
 .chat{
     height: calc(100% - 40px);
+    padding: 35px;
 }
 
 .input_text_container{

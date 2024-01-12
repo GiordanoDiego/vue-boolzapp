@@ -16,6 +16,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            activeContacts: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -183,8 +184,9 @@ createApp({
         };
     },
     methods: {
-        handleButtonClick() {
-            console.log(this.faiQualcosa(3));
+        setActiveChat(elem) {
+            console.log("cliccato elemento:", elem);
+            this.activeContacts = elem;
         },
         
     }

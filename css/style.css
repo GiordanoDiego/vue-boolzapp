@@ -114,12 +114,13 @@ img{
 .search_container{
     padding: 5px;
     background-color: var(--grey_color);
+    height: 35px;
 }
 .search_container input{
    height: 24px;
 }
 
-.container_user_chat> *{
+.single_user_chat> *{
     border-bottom: 1px solid lightgray;
     padding: 3px;
 }
@@ -190,7 +191,6 @@ img{
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 0.9em;
-   
 }
 
 .sent{
@@ -207,10 +207,16 @@ img{
     justify-content: end;
     align-items: center;
     margin-top: 5px;
+    background-color: rgb(214, 250, 187);
+    padding: 5px;
+    border-radius: 8px;
 }
 .received_container{
     display: flex;
     justify-content: start;
     align-items: center;
     margin-top: 5px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
 }

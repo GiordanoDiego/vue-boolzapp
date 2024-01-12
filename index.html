@@ -63,40 +63,14 @@
                             </div>
 
                             <!-- USERS -->
-                            <div class="container_user_chat">
+                            <div class="container_user_chat" v-for = "(user, i) in contacts">
                                 <div class="d-flex">
                                     <div class="me-2">
-                                        <img src="./img/avatar_1.jpg" alt="">
+                                        <img :src="user.avatar" alt="">
                                     </div>
                                     <div class="name_user">
                                         <div>
-                                           Michele  
-                                        </div>
-                                        <div class="color_gray">
-                                            Ultimo messaggio inviato
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="me-2">
-                                        <img src="./img/avatar_3.jpg" alt="">
-                                    </div>
-                                    <div class="name_user">
-                                        <div>
-                                           Armando  
-                                        </div>
-                                        <div class="color_gray">
-                                            Ultimo messaggio inviato
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="me-2">
-                                        <img src="./img/avatar_4.jpg" alt="">
-                                    </div>
-                                    <div class="name_user">
-                                        <div>
-                                           Orazio  
+                                          {{user.name}} 
                                         </div>
                                         <div class="color_gray">
                                             Ultimo messaggio inviato
@@ -128,7 +102,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <!-- CHAT MESSAGE RECEIVED  -->
+                        <!-- CHAT MESSAGE -->
                         <div class="container_chat">
                             <div class="chat">
                                <div class="sent_container">

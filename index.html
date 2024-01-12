@@ -112,7 +112,7 @@
                         <div class="container_chat">
                             <!-- MESSAGGI INVIATI -->
                             <div class="chat">
-                                <div v-for="(elem, i) in contacts[activeContacts].messages" :class= "contacts[activeContacts].messages[i].status == 'sent' ? 'sent_container' : 'received_container' ">
+                                <div v-for="(elem, i) in contacts[activeContacts].messages" :class= "elem.status == 'sent' ? 'sent_container' : 'received_container' ">
                                     <div>
                                         {{elem.message}}
                                     </div>
@@ -126,10 +126,11 @@
                                 <div class="emoji_container">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
+                                <!-- input -->
                                 <div>
-                                    <input type="text" placeholder="Scivi un messaggio">
-                                    
+                                    <input @keyup.enter="sendNewMessage()" v-model="newMessage" type="text" placeholder="Scivi un messaggio">
                                 </div>
+
                                 <div class="mic_container">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>

@@ -17,6 +17,7 @@ createApp({
     data() {
         return {
             activeContacts: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -188,6 +189,24 @@ createApp({
             console.log("cliccato elemento:", elem);
             this.activeContacts = elem;
         },
+        receivedOK(){
+            const newObj ={
+                date: '10/01/2020 15:50:00',
+                message: 'Ok!',
+                status: 'received'
+            };
+            this.contacts[this.activeContacts].messages.push(newObj);
+        },
+        sendNewMessage(){
+            const newObj ={
+                date: '10/01/2020 15:50:00',
+                message: this.newMessage.trim(),
+                status: 'sent'
+            };
+            this.contacts[this.activeContacts].messages.push(newObj);
+            this.newMessage = "";
+            setTimeout(this.receivedOK, 1000);
+        }
         
     }
 }).mount('#app');

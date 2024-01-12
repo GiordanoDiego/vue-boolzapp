@@ -18,6 +18,7 @@ createApp({
         return {
             activeContacts: 0,
             newMessage: "",
+            searchChat:"",
             contacts: [
                 {
                     name: 'Michele',
@@ -196,6 +197,7 @@ createApp({
                 status: 'received'
             };
             this.contacts[this.activeContacts].messages.push(newObj);
+            console.log("backup", this.contactsCopy);
         },
         sendNewMessage(){
             const newObj ={
@@ -206,7 +208,17 @@ createApp({
             this.contacts[this.activeContacts].messages.push(newObj);
             this.newMessage = "";
             setTimeout(this.receivedOK, 1000);
+        },
+        searchContact(){
+            for(let i = 0; i < this.contacts.length; i++){
+                    if(this.contacts[i].name.toLowerCase().includes(this.searchChat)){
+                        this.contacts[i].visible = true;
+                    }else{
+                        this.contacts[i].visible = false;
+                    }
+                
+            }
         }
-        
+      
     }
 }).mount('#app');

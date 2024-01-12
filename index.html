@@ -59,16 +59,18 @@
 
                             <!-- BARRA RICERCA --> 
                             <div class="search_container">
-                                <input class="w-100 " type="text" placeholder="Cerca">
+                                <input class="w-100 " type="text" placeholder="Cerca" v-model="searchChat" @keyup="searchContact()">
                             </div>
+                            
 
                             <!-- contacts -->
                             <div class="container_contacs">
                                 <div class="single_user_chat" v-for = "(user, i) in contacts"
                                     :class ="{
                                         'active': i == activeContacts
-                                    }" @click ="setActiveChat(i)">
-                                    <div class="d-flex">
+                                    }" @click ="setActiveChat(i)"
+                                    >
+                                    <div class="d-flex" v-if="user.visible == true">
                                         <div class="me-2">
                                             <img :src="user.avatar" :alt="user.name">
                                         </div>

@@ -200,14 +200,17 @@ createApp({
             console.log("backup", this.contactsCopy);
         },
         sendNewMessage(){
-            const newObj ={
-                date: '10/01/2020 15:50:00',
-                message: this.newMessage.trim(),
-                status: 'sent'
-            };
-            this.contacts[this.activeContacts].messages.push(newObj);
-            this.newMessage = "";
-            setTimeout(this.receivedOK, 1000);
+            if(this.newMessage.trim().length > 0){
+                const newObj ={
+                    date: '10/01/2020 15:50:00',
+                    message: this.newMessage.trim(),
+                    status: 'sent'
+                };
+                this.contacts[this.activeContacts].messages.push(newObj);
+                this.newMessage = "";
+                setTimeout(this.receivedOK, 1000);
+            }
+            
         },
         searchContact(){
             for(let i = 0; i < this.contacts.length; i++){

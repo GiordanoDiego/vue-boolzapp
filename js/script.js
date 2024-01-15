@@ -1,16 +1,4 @@
-/*
-console.log('nomeVariabile', nomeVariabile, typeof nomeVariabile);
 
-document.getElementById('idHtml').innerHTML = noveVariabileJS;
-
-//valore input 
-    userName = document.getElementById('userName');
-    userNameValue = userName.value;
-
-//controllare se il valore è Nan
-    if(isNaN(kmValue))
-
-*/
 const { createApp } = Vue;
 
 createApp({
@@ -18,6 +6,7 @@ createApp({
         return {
             activeContacts: 0,
             newMessage: "",
+            currentTime: null,
             searchChat:"",
             contacts: [
                 {
@@ -185,6 +174,9 @@ createApp({
             
         };
     },
+    mounted() {
+        this.getCurrentTime();
+      },
     methods: {
         setActiveChat(elem) {
             console.log("cliccato elemento:", elem);
@@ -192,7 +184,7 @@ createApp({
         },
         receivedOK(){
             const newObj ={
-                date: '10/01/2020 15:50:00',
+                date: this.currentTime,
                 message: 'Ok!',
                 status: 'received'
             };
@@ -202,7 +194,7 @@ createApp({
         sendNewMessage(){
             if(this.newMessage.trim().length > 0){
                 const newObj ={
-                    date: '10/01/2020 15:50:00',
+                    date: this.currentTime,
                     message: this.newMessage.trim(),
                     status: 'sent'
                 };
@@ -221,7 +213,19 @@ createApp({
                     }
                 
             }
-        }
+        },
+        getCurrentTime() {
+            const options = {
+              hour12: false,
+              hour: '2-digit',
+              minute: '2-digit'
+            };
+            const now = new Date();
+            this.currentTime = now.toLocaleTimeString('en-US', options);
+            setInterval(() => {
+              this.currentTime = new Date().toLocaleTimeString('en-US', options);
+            }, 1000);
+          },
       
     }
 }).mount('#app');

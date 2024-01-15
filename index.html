@@ -115,9 +115,9 @@
                             <!-- MESSAGGI INVIATI -->
                             <div class="chat">
                                 <div v-for="(elem, i) in contacts[activeContacts].messages" :class= "elem.status == 'sent' ? 'sent_container' : 'received_container' ">
-                                    <div>
+                                    <span>
                                         {{elem.message}}
-                                    </div>
+                                    </span>
                                     
                                 </div>
                                 
@@ -130,7 +130,7 @@
                                 </div>
                                 <!-- input -->
                                 <div>
-                                    <input @keyup.enter="sendNewMessage()" v-model="newMessage" type="text" placeholder="Scivi un messaggio">
+                                    <input @keyup.enter="sendNewMessage()" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
                                 </div>
 
                                 <div class="mic_container">

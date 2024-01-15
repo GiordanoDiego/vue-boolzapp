@@ -236,3 +236,11 @@ img{
     padding: 3px 6px;
     border-radius: 8px;
 }
+
+/*EFFECT*/
+.single_user_chat:hover{
+    background-color: rgba(195, 195, 195, 0.5);
+}
+.active{
+    background-color: rgba(195, 195, 195, 0.5);
+}
